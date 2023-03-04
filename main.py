@@ -45,14 +45,12 @@ submenu.add_command(label="Telegram", command=telegram)
 submenu.add_command(label="Instagram", command=instagram)
 submenu.add_command(label="Github", command=github)
 filemenu.add_cascade(label="Ijtimoiy tarmoqlar", menu=submenu)
-
 filemenu.add_separator()
 filemenu.add_command(label="Chiqish", command=root.destroy)
 root.config(menu=menubar)
 
 inputtxt=Text(root, bg='light cyan', fg='black', bd='20', font='family', height=10, width=70)
 Output=Text(root, bg='light green', fg='black', bd='20', font='family', height=10, width=70)
-
 
 def trans():
     inp = inputtxt.get("1.0", "end-1c")
@@ -62,11 +60,7 @@ def trans():
         Output.insert(END, to_latin(inp))
     elif not to_latin() in inp:
         showerror("Xatolik yuz berdi", "Bunday harf mavjud emas.")
-    
 
-#  مة معاهدة الأمن الجماعي تغاد
-#   Ê Î Ô Û Ŷ Ĉ Ĝ Ĥ Ĵ Ŝ Ŵ Ẑ
-#   片仮名
 def copy():
     cliptext = Output.get("1.0", 'end-1c')
     root.clipboard_clear()
@@ -82,9 +76,6 @@ button2=Button(root, justify="center", bd="3", fg="white", bg="#FF2A00", height=
 
 inputtxt.pack()
 Output.pack()
-#button.pack(side="top")
-#button.grid(row=1,column=0)
 button1.pack(side="right")
 button2.pack(side="left")
-
 root.mainloop()
